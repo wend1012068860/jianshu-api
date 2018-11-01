@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface SysUserRepositry extends JpaRepository<SysUser, Integer> {
+public interface SysUserRepository extends JpaRepository<SysUser, Integer> {
     /**
      * 根据邮箱查找用户
      * @param email
@@ -21,4 +21,9 @@ public interface SysUserRepositry extends JpaRepository<SysUser, Integer> {
      */
     @Query("FROM SysUser  u ORDER BY u.likeCount DESC ")
     List<SysUser> findHotUsers();
+
+    /**
+     * 根据id查找用户
+     */
+    SysUser findByUserId(Integer userId);
 }

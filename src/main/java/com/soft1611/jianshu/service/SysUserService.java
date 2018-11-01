@@ -10,4 +10,6 @@ public interface SysUserService {
     ResponseUtil userLogin(LoginUser loginUser);
 
     List<SysUser> getHotUsers();
+
+    SysUser getOne(Integer userId);
 }

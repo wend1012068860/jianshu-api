@@ -8,13 +8,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SysUserRepositryTest {
     @Resource
-    private SysUserRepositry sysUserRepositry;
+    private SysUserRepository sysUserRepositry;
 
     @Test
     public void findSysUserByEmail() {
@@ -22,5 +20,10 @@ public class SysUserRepositryTest {
         if (sysUser != null) {
             System.out.println(sysUser);
         }
+    }
+
+    @Test
+    public void findByUserId() {
+        System.out.println(sysUserRepositry.findByUserId(1));
     }
 }

@@ -1,6 +1,6 @@
 package com.soft1611.jianshu.service.impl;
 
-import com.soft1611.jianshu.dao.SysUserRepositry;
+import com.soft1611.jianshu.dao.SysUserRepository;
 import com.soft1611.jianshu.entity.LoginUser;
 import com.soft1611.jianshu.entity.SysUser;
 import com.soft1611.jianshu.service.SysUserService;
@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class SysUserServiceImpl implements SysUserService {
     @Resource
-    private SysUserRepositry sysUserRepositry;
+    private SysUserRepository sysUserRepositry;
 
     @Override
     public ResponseUtil userLogin(LoginUser loginUser) {
@@ -34,5 +34,10 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public List<SysUser> getHotUsers() {
         return sysUserRepositry.findHotUsers();
+    }
+
+    @Override
+    public SysUser getOne(Integer userId) {
+        return sysUserRepositry.findByUserId(userId);
     }
 }

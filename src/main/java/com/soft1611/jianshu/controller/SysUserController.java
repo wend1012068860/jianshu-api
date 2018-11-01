@@ -25,4 +25,9 @@ public class SysUserController {
         return new ResponseUtil(0, "get hot users!", sysUserService.getHotUsers());
     }
 
+    @RequestMapping(value = "/{userId}", method = RequestMethod.POST)
+    public ResponseUtil getOne(@PathVariable Integer userId){
+        return new ResponseUtil(0,"get one!",sysUserService.getOne(userId));
+    }
+
 }
